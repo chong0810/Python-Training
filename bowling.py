@@ -42,17 +42,17 @@ frameTotal = 0
 
 ball_1 = int(input("How many pins were knocked down by the first ball?   "))
 
-gameTotal = (gameTotal + ball_1)
+frameTotal = (frameTotal + ball_1)
 
 # Number of pins knocked down by the ball two 1
 
 ball_2 = int(input("How many pins were knocked down by the second ball?  "))
 
-gameTotal = (gameTotal + ball_2)
+frameTotal = (frameTotal + ball_2)
 
-# Number of pins knocked down on current frame 1
+# Updating game score 1
 
-frameTotal = (ball_1 + ball_2)
+gameTotal = (gameTotal + frameTotal)
 
 # Displaying Current Frame 1
 # header
@@ -75,17 +75,17 @@ frameTotal = 0
 
 ball_1 = int(input("How many pins were knocked down by the first ball?   "))
 
-gameTotal = (gameTotal + ball_1)
+frameTotal = (frameTotal + ball_1)
 
 # Number of pins knocked down by the ball two 2
 
 ball_2 = int(input("How many pins were knocked down by the second ball?  "))
 
-gameTotal = (gameTotal + ball_2)
+frameTotal = (frameTotal + ball_2)
 
-# Number of pins knocked down on current frame 2
+# Updating game score 2
 
-frameTotal = (ball_1 + ball_2)
+gameTotal = (gameTotal + frameTotal)
 
 # Displaying Current Frame 2
 # header
@@ -108,17 +108,17 @@ frameTotal = 0
 
 ball_1 = int(input("How many pins were knocked down by the first ball?   "))
 
-gameTotal = (gameTotal + ball_1)
+frameTotal = (frameTotal + ball_1)
 
 # Number of pins knocked down by the ball two 3
 
 ball_2 = int(input("How many pins were knocked down by the second ball?  "))
 
-gameTotal = (gameTotal + ball_2)
+frameTotal = (frameTotal + ball_2)
 
-# Number of pins knocked down on current frame 3
+# Updating game score 3
 
-frameTotal = (ball_1 + ball_2)
+gameTotal = (gameTotal + frameTotal)
 
 # Displaying Current Frame 3
 # header
@@ -142,17 +142,17 @@ frameTotal = 0
 
 ball_1 = int(input("How many pins were knocked down by the first ball?   "))
 
-gameTotal = (gameTotal + ball_1)
+frameTotal = (frameTotal + ball_1)
 
 # Number of pins knocked down by the ball two 4
 
 ball_2 = int(input("How many pins were knocked down by the second ball?  "))
 
-gameTotal = (gameTotal + ball_2)
+frameTotal = (frameTotal + ball_2)
 
-# Number of pins knocked down on current frame 4
+# Updating game score 4
 
-frameTotal = (ball_1 + ball_2)
+gameTotal = (gameTotal + frameTotal)
 
 # Displaying Current Frame 4
 # header
@@ -175,17 +175,17 @@ frameTotal = 0
 
 ball_1 = int(input("How many pins were knocked down by the first ball?   "))
 
-gameTotal = (gameTotal + ball_1)
+frameTotal = (frameTotal + ball_1)
 
 # Number of pins knocked down by the ball two 5
 
 ball_2 = int(input("How many pins were knocked down by the second ball?  "))
 
-gameTotal = (gameTotal + ball_2)
+frameTotal = (frameTotal + ball_2)
 
-# Number of pins knocked down on current frame 5
+# Updating game score 5
 
-frameTotal = (ball_1 + ball_2)
+gameTotal = (gameTotal + frameTotal)
 
 # Displaying Current Frame 5
 # header
@@ -208,17 +208,17 @@ frameTotal = 0
 
 ball_1 = int(input("How many pins were knocked down by the first ball?   "))
 
-gameTotal = (gameTotal + ball_1)
+frameTotal = (frameTotal + ball_1)
 
 # Number of pins knocked down by the ball two 6
 
 ball_2 = int(input("How many pins were knocked down by the second ball?  "))
 
-gameTotal = (gameTotal + ball_2)
+frameTotal = (frameTotal + ball_2)
 
-# Number of pins knocked down on current frame 6
+# Updating game score 6
 
-frameTotal = (ball_1 + ball_2)
+gameTotal = (gameTotal + frameTotal)
 
 # Displaying Current Frame 6
 # header
@@ -241,17 +241,17 @@ frameTotal = 0
 
 ball_1 = int(input("How many pins were knocked down by the first ball?   "))
 
-gameTotal = (gameTotal + ball_1)
+frameTotal = (frameTotal + ball_1)
 
 # Number of pins knocked down by the ball two 7
 
 ball_2 = int(input("How many pins were knocked down by the second ball?  "))
 
-gameTotal = (gameTotal + ball_2)
+frameTotal = (frameTotal + ball_2)
 
-# Number of pins knocked down on current frame 7
+# Updating game score 7
 
-frameTotal = (ball_1 + ball_2)
+gameTotal = (gameTotal + frameTotal)
 
 # Displaying Current Frame 7
 # header
@@ -274,17 +274,17 @@ frameTotal = 0
 
 ball_1 = int(input("How many pins were knocked down by the first ball?   "))
 
-gameTotal = (gameTotal + ball_1)
+frameTotal = (frameTotal + ball_1)
 
 # Number of pins knocked down by the ball two 8
 
 ball_2 = int(input("How many pins were knocked down by the second ball?  "))
 
-gameTotal = (gameTotal + ball_2)
+frameTotal = (frameTotal + ball_2)
 
-# Number of pins knocked down on current frame 8
+# Updating game score 8
 
-frameTotal = (ball_1 + ball_2)
+gameTotal = (gameTotal + frameTotal)
 
 # Displaying Current Frame 8
 # header
@@ -307,17 +307,17 @@ frameTotal = 0
 
 ball_1 = int(input("How many pins were knocked down by the first ball?   "))
 
-gameTotal = (gameTotal + ball_1)
+frameTotal = (frameTotal + ball_1)
 
 # Number of pins knocked down by the ball two 9
 
 ball_2 = int(input("How many pins were knocked down by the second ball?  "))
 
-gameTotal = (gameTotal + ball_2)
+frameTotal = (frameTotal + ball_2)
 
-# Number of pins knocked down on current frame 9
+# Updating game score 9
 
-frameTotal = (ball_1 + ball_2)
+gameTotal = (gameTotal + frameTotal)
 
 # Displaying Current Frame 9
 # header
@@ -340,23 +340,23 @@ frameTotal = 0
 
 ball_1 = int(input("How many pins were knocked down by the first ball?   "))
 
-gameTotal = (gameTotal + ball_1)
+frameTotal = (frameTotal + ball_1)
 
 # Number of pins knocked down by the ball two 10
 
 ball_2 = int(input("How many pins were knocked down by the second ball?  "))
 
-gameTotal = (gameTotal + ball_2)
+frameTotal = (frameTotal + ball_2)
 
-# Number of pins knocked down on current frame 10
+# Updating game score 10
 
-frameTotal = (ball_1 + ball_2)
+gameTotal = (gameTotal + frameTotal)
 
 # Displaying Current Frame 10
 # header
 print("Frame    Ball 1    Ball 2   Frame Total     Game Score")
 #printing Score
-print("{0}        {1}         {2}        {3}               {4}".format(frameNumber, ball_1, ball_2, frameTotal, gameTotal))
+print("{0}       {1}         {2}        {3}               {4}".format(frameNumber, ball_1, ball_2, frameTotal, gameTotal))
 
 
 #End of the Simulation
