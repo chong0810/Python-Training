@@ -1,5 +1,5 @@
 # Program: Bowling
-# Description: This program is a bowling simulation program which it will take user's input to calculate and display the score.
+# Description: This program is a simple bowling simulation program which it will take user's input to calculate and display the score.
 #   
 # Author: Daniel Hong 
 # Date: 2/12/2021
@@ -42,12 +42,14 @@ frameTotal = 0
 
 ball_1 = int(input("How many pins were knocked down by the first ball?   "))
 
+#Updating frame total with first ball
 frameTotal = (frameTotal + ball_1)
 
 # Number of pins knocked down by the ball two 1
 
 ball_2 = int(input("How many pins were knocked down by the second ball?  "))
 
+#updating frame total with second ball
 frameTotal = (frameTotal + ball_2)
 
 # Updating game score 1
@@ -58,7 +60,7 @@ gameTotal = (gameTotal + frameTotal)
 # header
 print("Frame    Ball 1    Ball 2   Frame Total     Game Score")
 #printing Score
-print("{0}        {1}         {2}        {3}               {4}".format(frameNumber, ball_1, ball_2, frameTotal, gameTotal))
+print(frameNumber, "      ", ball_1, "       ", ball_2, "      " ,frameTotal, "             ", gameTotal)
 
 #Frame Number Updater 1
 
@@ -75,12 +77,14 @@ frameTotal = 0
 
 ball_1 = int(input("How many pins were knocked down by the first ball?   "))
 
+#Updating frame total with first ball
 frameTotal = (frameTotal + ball_1)
 
 # Number of pins knocked down by the ball two 2
 
 ball_2 = int(input("How many pins were knocked down by the second ball?  "))
 
+#updating frame total with second ball
 frameTotal = (frameTotal + ball_2)
 
 # Updating game score 2
@@ -91,7 +95,7 @@ gameTotal = (gameTotal + frameTotal)
 # header
 print("Frame    Ball 1    Ball 2   Frame Total     Game Score")
 #printing Score
-print("{0}        {1}         {2}        {3}               {4}".format(frameNumber, ball_1, ball_2, frameTotal, gameTotal))
+print(frameNumber, "      ", ball_1, "       ", ball_2, "      " ,frameTotal, "             ", gameTotal)
 
 #Frame Number Updater 3
 
@@ -108,12 +112,14 @@ frameTotal = 0
 
 ball_1 = int(input("How many pins were knocked down by the first ball?   "))
 
+#Updating frame total with first ball
 frameTotal = (frameTotal + ball_1)
 
 # Number of pins knocked down by the ball two 3
 
 ball_2 = int(input("How many pins were knocked down by the second ball?  "))
 
+#updating frame total with second ball
 frameTotal = (frameTotal + ball_2)
 
 # Updating game score 3
@@ -124,7 +130,7 @@ gameTotal = (gameTotal + frameTotal)
 # header
 print("Frame    Ball 1    Ball 2   Frame Total     Game Score")
 #printing Score
-print("{0}        {1}         {2}        {3}               {4}".format(frameNumber, ball_1, ball_2, frameTotal, gameTotal))
+print(frameNumber, "      ", ball_1, "       ", ball_2, "      " ,frameTotal, "             ", gameTotal)
 
 
 #Frame Number Updater 4
@@ -142,12 +148,14 @@ frameTotal = 0
 
 ball_1 = int(input("How many pins were knocked down by the first ball?   "))
 
+#Updating frame total with first ball
 frameTotal = (frameTotal + ball_1)
 
 # Number of pins knocked down by the ball two 4
 
 ball_2 = int(input("How many pins were knocked down by the second ball?  "))
 
+#updating frame total with second ball
 frameTotal = (frameTotal + ball_2)
 
 # Updating game score 4
@@ -158,7 +166,7 @@ gameTotal = (gameTotal + frameTotal)
 # header
 print("Frame    Ball 1    Ball 2   Frame Total     Game Score")
 #printing Score
-print("{0}        {1}         {2}        {3}               {4}".format(frameNumber, ball_1, ball_2, frameTotal, gameTotal))
+print(frameNumber, "      ", ball_1, "       ", ball_2, "      " ,frameTotal, "             ", gameTotal)
 
 #Frame Number Updater 5
 
@@ -175,12 +183,14 @@ frameTotal = 0
 
 ball_1 = int(input("How many pins were knocked down by the first ball?   "))
 
+#Updating frame total with first ball
 frameTotal = (frameTotal + ball_1)
 
 # Number of pins knocked down by the ball two 5
 
 ball_2 = int(input("How many pins were knocked down by the second ball?  "))
 
+#updating frame total with second ball
 frameTotal = (frameTotal + ball_2)
 
 # Updating game score 5
@@ -191,7 +201,7 @@ gameTotal = (gameTotal + frameTotal)
 # header
 print("Frame    Ball 1    Ball 2   Frame Total     Game Score")
 #printing Score
-print("{0}        {1}         {2}        {3}               {4}".format(frameNumber, ball_1, ball_2, frameTotal, gameTotal))
+print(frameNumber, "      ", ball_1, "       ", ball_2, "      " ,frameTotal, "             ", gameTotal)
 
 #Frame Number Updater 6
 
@@ -208,12 +218,14 @@ frameTotal = 0
 
 ball_1 = int(input("How many pins were knocked down by the first ball?   "))
 
+#Updating frame total with first ball
 frameTotal = (frameTotal + ball_1)
 
 # Number of pins knocked down by the ball two 6
 
 ball_2 = int(input("How many pins were knocked down by the second ball?  "))
 
+#updating frame total with second ball
 frameTotal = (frameTotal + ball_2)
 
 # Updating game score 6
@@ -224,7 +236,7 @@ gameTotal = (gameTotal + frameTotal)
 # header
 print("Frame    Ball 1    Ball 2   Frame Total     Game Score")
 #printing Score
-print("{0}        {1}         {2}        {3}               {4}".format(frameNumber, ball_1, ball_2, frameTotal, gameTotal))
+print(frameNumber, "      ", ball_1, "       ", ball_2, "      " ,frameTotal, "             ", gameTotal)
 
 #Frame Number Updater 7
 
@@ -241,12 +253,14 @@ frameTotal = 0
 
 ball_1 = int(input("How many pins were knocked down by the first ball?   "))
 
+#Updating frame total with first ball
 frameTotal = (frameTotal + ball_1)
 
 # Number of pins knocked down by the ball two 7
 
 ball_2 = int(input("How many pins were knocked down by the second ball?  "))
 
+#updating frame total with second ball
 frameTotal = (frameTotal + ball_2)
 
 # Updating game score 7
@@ -257,7 +271,7 @@ gameTotal = (gameTotal + frameTotal)
 # header
 print("Frame    Ball 1    Ball 2   Frame Total     Game Score")
 #printing Score
-print("{0}        {1}         {2}        {3}               {4}".format(frameNumber, ball_1, ball_2, frameTotal, gameTotal))
+print(frameNumber, "      ", ball_1, "       ", ball_2, "      " ,frameTotal, "             ", gameTotal)
 
 #Frame Number Updater 8
 
@@ -274,12 +288,14 @@ frameTotal = 0
 
 ball_1 = int(input("How many pins were knocked down by the first ball?   "))
 
+#Updating frame total with first ball
 frameTotal = (frameTotal + ball_1)
 
 # Number of pins knocked down by the ball two 8
 
 ball_2 = int(input("How many pins were knocked down by the second ball?  "))
 
+#updating frame total with second ball
 frameTotal = (frameTotal + ball_2)
 
 # Updating game score 8
@@ -290,7 +306,7 @@ gameTotal = (gameTotal + frameTotal)
 # header
 print("Frame    Ball 1    Ball 2   Frame Total     Game Score")
 #printing Score
-print("{0}        {1}         {2}        {3}               {4}".format(frameNumber, ball_1, ball_2, frameTotal, gameTotal))
+print(frameNumber, "      ", ball_1, "       ", ball_2, "      " ,frameTotal, "             ", gameTotal)
 
 #Frame Number Updater 9
 
@@ -307,12 +323,14 @@ frameTotal = 0
 
 ball_1 = int(input("How many pins were knocked down by the first ball?   "))
 
+#Updating frame total with first ball
 frameTotal = (frameTotal + ball_1)
 
 # Number of pins knocked down by the ball two 9
 
 ball_2 = int(input("How many pins were knocked down by the second ball?  "))
 
+#updating frame total with second ball
 frameTotal = (frameTotal + ball_2)
 
 # Updating game score 9
@@ -323,7 +341,7 @@ gameTotal = (gameTotal + frameTotal)
 # header
 print("Frame    Ball 1    Ball 2   Frame Total     Game Score")
 #printing Score
-print("{0}        {1}         {2}        {3}               {4}".format(frameNumber, ball_1, ball_2, frameTotal, gameTotal))
+print(frameNumber, "      ", ball_1, "       ", ball_2, "      " ,frameTotal, "             ", gameTotal)
 
 #Frame Number Updater 10
 
@@ -340,12 +358,14 @@ frameTotal = 0
 
 ball_1 = int(input("How many pins were knocked down by the first ball?   "))
 
+#Updating frame total with first ball
 frameTotal = (frameTotal + ball_1)
 
 # Number of pins knocked down by the ball two 10
 
 ball_2 = int(input("How many pins were knocked down by the second ball?  "))
 
+#updating frame total with second ball
 frameTotal = (frameTotal + ball_2)
 
 # Updating game score 10
@@ -356,7 +376,7 @@ gameTotal = (gameTotal + frameTotal)
 # header
 print("Frame    Ball 1    Ball 2   Frame Total     Game Score")
 #printing Score
-print("{0}       {1}         {2}        {3}               {4}".format(frameNumber, ball_1, ball_2, frameTotal, gameTotal))
+print(frameNumber, "     ", ball_1, "       ", ball_2, "      " ,frameTotal, "             ", gameTotal)
 
 
 #End of the Simulation
