@@ -380,8 +380,10 @@ print(frameNumber, "     ", ball_1, "       ", ball_2, "      " ,frameTotal, "  
 
 
 #End of the Simulation
-print ("Your total Score is = {0}".format(gameTotal))
-print ("Exiting the bowling simulation")
+print ("Your total Score is = ", gameTotal)
+print ("Exiting the bowling simulation. Thanks for playing.")
+
+
 # End Program
 
 
