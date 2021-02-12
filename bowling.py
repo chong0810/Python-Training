@@ -24,11 +24,28 @@ ball_2 = 0
 frameTotal = 0
 
 # Game Score
-gameScore = 0
+gameTotal = 0
 
-#Simulation
-
+#Bowling Game Simulation
 #Inital Print
 print("Frame    Ball 1    Ball2   Frame Total     Game Score")
+
+#Frame Number Updater 1
+
+frameNumber = int(input("What is the current frame number?"))
+
+# Number of pins knocked down by the ball one 1
+
+ball_1 = int(input("How many pins were knocked down by the first ball?"))
+
+gameTotal = (gameTotal + ball_1)
+
+# Number of pins knocked down by the ball two 1
+
+ball_2 = int(input("How many pins were knocked down by the second ball?"))
+
+gameTotal = ()
+
+
 
 # End Program
