@@ -32,8 +32,10 @@ Here are your shoes.  Pick any ball from the racks.""")
     while user_answer_game[0].lower() == "y":
         user_answer_summary = input("Do you want a summary?  ")
         play_game(user_answer_summary)
+
         user_answer_game = input("Do you want to play another game?  ")
-    else: print ("Exiting the game.")
+    else: print ("""Exiting the game.
+    Thanks for playing!""")
 
 # Function play_game()
 # Description: This function actually plays one game
@@ -50,23 +52,18 @@ def play_game(user_answer_summary):
     game_stat = []
     for frame_counter in range(NUMBER_OF_FRAMES):
         
-        print("Frame ", frame_counter)
+        print("Frame ", frame_counter +1)
         
         frames_list = roll_frame(frame_counter)
         
-        if frame_counter != 0:
-            game_stat[frame_counter][4] = game_stat[frame_counter][3] + game_stat[frame_counter][4]
-        
         game_stat.append(frames_list)
 
-        
+        if frame_counter == 0:
+            game_stat[frame_counter][4] = game_stat[frame_counter][3]
+        if frame_counter != 0:
+            game_stat[frame_counter][4] = game_stat[frame_counter][3] + game_stat[frame_counter-1][4]
     
-    
-
-    print(game_stat)
-
     print_the_game(user_answer_summary,game_stat)
-
 
     # Return the return variable, if any
 
@@ -162,28 +159,38 @@ def print_the_game(user_answer_summary, game_stat):
 
     # Declare Local Variable types (NOT parameters)
     frame_counter = 0
-
-    if user_answer_summary[0].lower() == "y":
-        print("game summary printed") 
-
+    convert_string = str
     # print ( "print_the_game" )  # so I can test-run the template and not get an error
-
+    print("Here is your game summary:")
     print("Frame", "    Ball 1", "    Ball 2", "    Frame Total", "    Total Score")
+
+    
+    
 
     # for frame_counter in range (NUMBER_OF_FRAMES):
 
     while frame_counter < NUMBER_OF_FRAMES:
-        print('{a:>5} {b:>10} {c:>10} {c:>15}'.format(a = frame_counter+1, b= game_stat[frame_counter][1], c= game_stat[frame_counter][2], d=game_stat[frame_counter][3]))
-        frame_counter = frame_counter +1 
+        convert_string = '{a:>5} {b:>10} {c:>10} {d:>15} {e:>15}'.format(a = frame_counter+1, b= game_stat[frame_counter][1], c= game_stat[frame_counter][2], d=game_stat[frame_counter][3], e=game_stat[frame_counter][4])
 
+        print(convert_string)
+
+        if user_answer_summary[0].lower() == 'y':
+            
+            game_summary = open("gameSummary.txt", "a")
+            if frame_counter == 0:
+                game_summary.write("\nHere is your game summary:")
+                game_summary.write("\nFrame     Ball 1     Ball 2     Frame Total     Total Score\n")
+            game_summary.write(convert_string + "\n")
+            game_summary.close        
+
+        frame_counter = frame_counter +1
 
     # Return the return variable, if any
 
 #} Function print_the_game()
 
+
 # End Program
-
-
 
 main()
 
