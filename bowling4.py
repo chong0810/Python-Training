@@ -145,7 +145,9 @@ def roll_ball(ball_counter, pins_left):
 def print_the_game(user_answer_summary):
 
     # Declare Local Variable types (NOT parameters)
-
+    if user_answer_summary[0].lower() == "y":
+        print("game summary printed") 
+        
     print ( "print_the_game" )  # so I can test-run the template and not get an error
 
 
