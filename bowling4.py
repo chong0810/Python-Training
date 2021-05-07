@@ -32,7 +32,7 @@ Here are your shoes.  Pick any ball from the racks.""")
     while user_answer_game[0].lower() == "y":
         user_answer_summary = input("Do you want a summary?  ")
         play_game(user_answer_summary)
-        user_answer_game = input("Do you want to play the game?  ")
+        user_answer_game = input("Do you want to play another game?  ")
     else: print ("Exiting the game.")
 
 # Function play_game()
@@ -46,18 +46,26 @@ def play_game(user_answer_summary):
 
     # Declare Local Variable types (NOT parameters)
     
-    game_stat = []
     frames_list = []
-    
+    game_stat = []
     for frame_counter in range(NUMBER_OF_FRAMES):
+        
         print("Frame ", frame_counter)
+        
         frames_list = roll_frame(frame_counter)
+        
+        if frame_counter != 0:
+            game_stat[frame_counter][4] = game_stat[frame_counter][3] + game_stat[frame_counter][4]
         
         game_stat.append(frames_list)
 
+        
+    
+    
+
     print(game_stat)
 
-    print_the_game(user_answer_summary)
+    print_the_game(user_answer_summary,game_stat)
 
 
     # Return the return variable, if any
@@ -78,7 +86,7 @@ def roll_frame(frame_counter):
 
     # Declare Local Variable types (NOT parameters)
     
-    current_frame_stat = [frame_counter,0,0,0]
+    current_frame_stat = [frame_counter,0,0,0,0]
     pins_left = NUMBER_OF_PINS
     
     for ball_counter in range (1,3):
@@ -150,13 +158,23 @@ def roll_ball(ball_counter, pins_left):
 # Returns:
 #   none
 
-def print_the_game(user_answer_summary):
+def print_the_game(user_answer_summary, game_stat):
 
     # Declare Local Variable types (NOT parameters)
+    frame_counter = 0
+
     if user_answer_summary[0].lower() == "y":
         print("game summary printed") 
 
     # print ( "print_the_game" )  # so I can test-run the template and not get an error
+
+    print("Frame", "    Ball 1", "    Ball 2", "    Frame Total", "    Total Score")
+
+    # for frame_counter in range (NUMBER_OF_FRAMES):
+
+    while frame_counter < NUMBER_OF_FRAMES:
+        print('{a:>5} {b:>10} {c:>10} {c:>15}'.format(a = frame_counter+1, b= game_stat[frame_counter][1], c= game_stat[frame_counter][2], d=game_stat[frame_counter][3]))
+        frame_counter = frame_counter +1 
 
 
     # Return the return variable, if any
