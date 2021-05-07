@@ -22,6 +22,9 @@ NUMBER_OF_PINS = int(10)
 
 def main():
 
+    print("""Hello, welcome to ACC Lanes.
+Here are your shoes.  Pick any ball from the racks.""")
+
     # Declare Variable types (EVERY variable used in this main program)
     user_answer_game = input("Do you want to play the game?  ")
     user_answer_summary = str
@@ -45,12 +48,11 @@ def play_game(user_answer_summary):
     
     game_stat = []
     frames_list = []
-
-    print ( "play_game() was executed\n" )  # so I can test-run the template and not get an error
     
     for frame_counter in range(NUMBER_OF_FRAMES):
+        print("Frame ", frame_counter)
         frames_list = roll_frame(frame_counter)
-        print(frame_counter)
+        
         game_stat.append(frames_list)
 
     print(game_stat)
@@ -79,9 +81,6 @@ def roll_frame(frame_counter):
     current_frame_stat = [frame_counter,0,0,0]
     pins_left = NUMBER_OF_PINS
     
-
-    print ( "roll_frame() was executed\n" )  # so I can test-run the template and not get an error
-
     for ball_counter in range (1,3):
         pins_left = pins_left - current_frame_stat[1]
         current_frame_stat[ball_counter] = roll_ball(ball_counter, pins_left)
@@ -93,7 +92,6 @@ def roll_frame(frame_counter):
     return current_frame_stat
 
     # Return the return variable, if any
-
 
 #} Function roll_frame()
 
@@ -115,22 +113,27 @@ def roll_ball(ball_counter, pins_left):
     if ball_counter == 1:
         score = random.randint(0,pins_left)
         if score == pins_left:
-            print("It's a strike!\n")
-        return score
+            print("Ball 1: " , score , "**************STRIKE!")
+            return score
+        else:
+            print("Ball 1: " , score)
+            return score
+
+
     elif ball_counter == 2 and pins_left !=0:
         score = random.randint(0,pins_left)
         if score == pins_left:
-            print("It's a spare\n")
+            print("Ball 2: " , score , "**************SPARE!")
             return score
 
         else:
-            print("...open frame\n")
+            print("Ball 2: " , score , "..............open frame")
             return score       
     else:
         score = pins_left
         return score
 
-    print ( "roll_ball() was executed\n" )  # so I can test-run the template and not get an error
+    # print ( "roll_ball() was executed\n" )  # so I can test-run the template and not get an error
 
 
     # Return the return variable, if any
@@ -153,7 +156,7 @@ def print_the_game(user_answer_summary):
     if user_answer_summary[0].lower() == "y":
         print("game summary printed") 
 
-    print ( "print_the_game" )  # so I can test-run the template and not get an error
+    # print ( "print_the_game" )  # so I can test-run the template and not get an error
 
 
     # Return the return variable, if any
