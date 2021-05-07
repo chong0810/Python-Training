@@ -12,6 +12,7 @@
 #   <revision date> 
 
 # list libraries used
+import random
 
 # Declare global constants (name in ALL_CAPS)
 
@@ -45,11 +46,12 @@ def play_game(user_answer_summary):
     game_stat = []
     frames_list = []
 
-    print ( "play_game" )  # so I can test-run the template and not get an error
+    print ( "play_game() was executed" )  # so I can test-run the template and not get an error
     
     for frame_counter in range(NUMBER_OF_FRAMES):
         frames_list = roll_frame(Frame_counter)
         print(counter)
+        game_stat.append(frames_list)
 
     print_the_game(user_answer_summary)
 
@@ -72,15 +74,18 @@ def roll_frame(frame_counter):
 
     # Declare Local Variable types (NOT parameters)
     
-    score = int
-    current_frame_stat = [frame_counter,0,0,0,0,]
+    current_frame_stat = [frame_counter,0,0,0]
+    pins_left = NUMBER_OF_PINS
     
 
-    print ( "roll_frame" )  # so I can test-run the template and not get an error
+    print ( "roll_frame() was executed" )  # so I can test-run the template and not get an error
 
     for ball_counter in range (1,3):
-        current_frame_stat[ball_counter] = roll_ball(ball_counter)
-        
+        pins_left = pins_left - current_frame_stat[1]
+        current_frame_stat[ball_counter] = roll_ball(ball_counter, pins_left)
+        pins_left = NUMBER_OF_PINS
+
+
     current_frame_stat [3] = current_frame_stat [1] + current_frame_stat [2]
 
     return current_frame_stat
@@ -100,11 +105,27 @@ def roll_frame(frame_counter):
 # Returns:
 #   none
 
-def roll_ball(ball_counter):
+def roll_ball(ball_counter, pins_left):
 
     # Declare Local Variable types (NOT parameters)
+    score = int
 
-    print ( "roll_ball" )  # so I can test-run the template and not get an error
+    if ball_counter == 1:
+        score = random.randint(0,pins_left)
+        if score == pins_left:
+            print("It's a strike!")
+        return score
+    else:
+        score = random.randint(0,pins_left)
+        if score == pins_left:
+            print("It's a spare")
+            return score
+
+        else:
+            print("...open frame")
+            return score
+
+    print ( "roll_ball() was executed" )  # so I can test-run the template and not get an error
 
 
     # Return the return variable, if any
