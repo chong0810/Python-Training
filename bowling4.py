@@ -23,7 +23,7 @@ def main():
 
     # Declare Variable types (EVERY variable used in this main program)
     user_answer_game = input("Do you want to play the game?")
-    user_answer_summary
+    user_answer_summary = str
     # Ask the user if they want to play game (repetition)
     while user_answer_game[0].lower() == "y":
         user_answer_summary = input("Do you want a summary?")
@@ -32,28 +32,26 @@ def main():
     else: print ("Exiting the game.")
 
 # Function play_game()
-# Description:
+# Description: This function actually plays one game
 #   
-# Calls:
-#   none
-# Parameters:
-#   none
-# Returns:
-#   none
+# Calls: roll_frames(), print_the_game() 
+# Parameters: user_answer_summary
+# Returns: none
     
 def play_game(user_answer_summary):
 
     # Declare Local Variable types (NOT parameters)
     
     game_stat = []
-    
+    frames_list = []
+
     print ( "play_game" )  # so I can test-run the template and not get an error
     
-    roll_frame()
+    for frame_counter in range(NUMBER_OF_FRAMES):
+        frames_list = roll_frame(Frame_counter)
+        print(counter)
 
     print_the_game(user_answer_summary)
-
-    
 
 
     # Return the return variable, if any
@@ -70,13 +68,25 @@ def play_game(user_answer_summary):
 # Returns:
 #   none
 
-def roll_frame():
+def roll_frame(frame_counter):
 
     # Declare Local Variable types (NOT parameters)
+    
+    score = int
+    current_frame_stat = [frame_counter,0,0,0,0,]
+    
 
     print ( "roll_frame" )  # so I can test-run the template and not get an error
 
+    for ball_counter in range (1,3):
+        current_frame_stat[ball_counter] = roll_ball(ball_counter)
+        
+    current_frame_stat [3] = current_frame_stat [1] + current_frame_stat [2]
+
+    return current_frame_stat
+
     # Return the return variable, if any
+
 
 #} Function roll_frame()
 
@@ -90,7 +100,7 @@ def roll_frame():
 # Returns:
 #   none
 
-def roll_ball():
+def roll_ball(ball_counter):
 
     # Declare Local Variable types (NOT parameters)
 
@@ -111,7 +121,7 @@ def roll_ball():
 # Returns:
 #   none
 
-def print_the_game():
+def print_the_game(user_answer_summary):
 
     # Declare Local Variable types (NOT parameters)
 
