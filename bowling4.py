@@ -22,11 +22,13 @@ NUMBER_OF_PINS = int(10)
 def main():
 
     # Declare Variable types (EVERY variable used in this main program)
-    user_answer = input("Do you want to play the game?")
+    user_answer_game = input("Do you want to play the game?")
+    user_answer_summary
     # Ask the user if they want to play game (repetition)
-    while user_answer[0].lower() == "y":
-        play_game()
-        user_answer = input("Do you want to play the game?")
+    while user_answer_game[0].lower() == "y":
+        user_answer_summary = input("Do you want a summary?")
+        play_game(user_answer_summary)
+        user_answer_game = input("Do you want to play the game?")
     else: print ("Exiting the game.")
 
 # Function play_game()
@@ -39,13 +41,19 @@ def main():
 # Returns:
 #   none
     
-def play_game():
+def play_game(user_answer_summary):
 
     # Declare Local Variable types (NOT parameters)
-
+    
+    game_stat = []
+    
+    print ( "play_game" )  # so I can test-run the template and not get an error
+    
     roll_frame()
 
-    print ( "play_game" )  # so I can test-run the template and not get an error
+    print_the_game(user_answer_summary)
+
+    
 
 
     # Return the return variable, if any
