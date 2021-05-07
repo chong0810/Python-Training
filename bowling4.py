@@ -49,9 +49,11 @@ def play_game(user_answer_summary):
     print ( "play_game() was executed" )  # so I can test-run the template and not get an error
     
     for frame_counter in range(NUMBER_OF_FRAMES):
-        frames_list = roll_frame(Frame_counter)
-        print(counter)
+        frames_list = roll_frame(frame_counter)
+        print(frame_counter)
         game_stat.append(frames_list)
+
+    print(game_stat)
 
     print_the_game(user_answer_summary)
 
@@ -115,7 +117,7 @@ def roll_ball(ball_counter, pins_left):
         if score == pins_left:
             print("It's a strike!")
         return score
-    else:
+    else if pins_left !=0:
         score = random.randint(0,pins_left)
         if score == pins_left:
             print("It's a spare")
@@ -147,7 +149,7 @@ def print_the_game(user_answer_summary):
     # Declare Local Variable types (NOT parameters)
     if user_answer_summary[0].lower() == "y":
         print("game summary printed") 
-        
+
     print ( "print_the_game" )  # so I can test-run the template and not get an error
 
 
