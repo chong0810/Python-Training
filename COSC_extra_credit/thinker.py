@@ -10,7 +10,7 @@
 #   <revision date> 
 
 # list libraries used
-
+import random
 # Declare global constants (name in ALL_CAPS)
 
 # Function think_of_a_number()
@@ -35,13 +35,23 @@
 # Returns:
 #   upper_limit     int()
 
-def 
+def think_of_a_number(low_limit, high_limit)
 
     # Declare Local Variable types (NOT parameters)
+    upper_limit = int()
+    answer = int ()
+
+    upper_limit = random(low_limit, high_limit)
+    print(upper_limit)
+
+    print("I'm thinking of a number between ", low_limit, " and " , upper_limit)
+
+    answer = random.randint(low_limit, upper_limit)
+    print(answer)
 
 
     # Return the return variable, if any
-
+    return upper_limit
 # End Function think_of_a_number()
 
 
@@ -62,7 +72,7 @@ def
 # Returns:
 #   feedback    str()
 
-def 
+def evaluate_user_guess()
 
     # Declare Local Variable types (NOT parameters)
 
