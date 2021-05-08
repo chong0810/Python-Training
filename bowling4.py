@@ -193,5 +193,3 @@ def print_the_game(user_answer_summary, game_stat):
 # End Program
 
 main()
-
-
