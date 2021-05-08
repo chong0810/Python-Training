@@ -9,6 +9,7 @@
 #   <revision date> 
 
 # list libraries used
+import thinker, random
 
 # Declare global constants (name in ALL_CAPS)
 
@@ -29,13 +30,18 @@
 # Returns:
 #   tries           int()
 
-def 
+def play_a_round(lower_limit, upper_limit)
 
     # Declare Local Variable types (NOT parameters)
+    tries = int()
+
+    thinker.evaluate_user_guess()
+    make_a_guess()
 
 
     # Return the return variable, if any
 
+    return tries
 # End Function play_a_round()
 
 
@@ -55,13 +61,13 @@ def
 # Returns:
 #   my_guess    int()
 
-def 
+def make_a_guess(low, high)
 
     # Declare Local Variable types (NOT parameters)
-
-
+    my_guess = int()
+    my_guess = random.randint(low,high)
     # Return the return variable, if any
-
+    return my_guess
 # End Function make_a_guess()
 
 

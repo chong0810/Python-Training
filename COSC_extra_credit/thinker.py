@@ -1,14 +1,11 @@
 # Library name: thinker
 #
-#   DIRECTIONS:
-#       Rename this file "thinker.py"
-#       Write the functions to the specifications in the headers
 #
 # Functions Included in Library: 
 #   think_of_a_number()
 #   evaluate_user_guess()
-# Author: <your name>
-# Date: <creation date> 
+# Author: Chang Yeon Hong
+# Date: 08 May 2021
 # Revised: 
 #   <revision date> 
 
