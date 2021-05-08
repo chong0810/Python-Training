@@ -49,6 +49,16 @@ def think_of_a_number(low_limit, high_limit)
     answer = random.randint(low_limit, upper_limit)
     print(answer)
 
+    try:
+        file1 = open("answer.txt", "w")
+    # } end try
+    except:
+        print("There was an error")
+    # } end except
+    else: 
+        file1.write(answer)
+        file1.close()
+    # } end else
 
     # Return the return variable, if any
     return upper_limit
@@ -72,13 +82,41 @@ def think_of_a_number(low_limit, high_limit)
 # Returns:
 #   feedback    str()
 
-def evaluate_user_guess()
+def evaluate_user_guess(user_guess)
 
     # Declare Local Variable types (NOT parameters)
+    answer = int()
+    feedback = str()
 
+    if user_guess == -1:
+            feedback = "error"
+    # } end if
+    else:
+        try:
+        file1 = open("answer.txt", "r")
+        # } end try
+        except:
+            feedback = "error"
+        # } end except
+        else: 
+            answer = file1.read()
+            file1.close()
+            if user_guess < answer:
+                feedback = "low"
+            # } end if
+            elif: user_guess == answer:
+                feedback = "equal"
+            # } end elif
+            elif: user_guess > answer:
+                feedback = "higher"
+                # } end elif
+        # } end else
+    #} end else
+
+    
 
     # Return the return variable, if any
-
+    return feedback
 # End Function evaluate_user_guess()
 
 
