@@ -11,3 +11,16 @@ Frame     Ball 1     Ball 2     Frame Total     Total Score
     8          3          6               9              60
     9          0          2               2              62
    10          7          0               7              69
+
+Here is your game summary:
+Frame     Ball 1     Ball 2     Frame Total     Total Score
+    1          5          0               5               5
+    2          3          3               6              11
+    3         10          0              10              21
+    4          5          3               8              29
+    5          0          5               5              34
+    6          3          3               6              40
+    7          7          0               7              47
+    8          4          0               4              51
+    9          8          0               8              59
+   10          3          3               6              65

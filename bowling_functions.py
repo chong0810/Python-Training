@@ -1,4 +1,23 @@
+# Program Bowling Functions
+# Description: This is module for bowling functions
+# Author: Chang Yeon Hong
+# Date: May 6, 2021
+# Revised: 
+#   <revision date> 
+# list libraries used
+
 import random
+
+# Function play_game()
+# Description: This is a function that starts the bowling game
+# Calls:
+#   roll_frame()
+#   print_the_game()
+# Parameters:
+#   frame_num, pin_num ,user_answer_summary
+# Returns:
+#   none
+
 
 def play_game(frame_num, pin_num ,user_answer_summary):
 
@@ -26,15 +45,14 @@ def play_game(frame_num, pin_num ,user_answer_summary):
 
     # Return the return variable, if any
 
-#} Function play_game()
+#} end Function play_game()
 
 # Function roll_frame()
-# Description:
-#   
+# Description: This function simulates each frame
 # Calls:
-#   none
+#   roll_ball()
 # Parameters:
-#   frame_counter
+#   frame_counter, pin_num
 # Returns:
 #   current_frame stat
 
@@ -49,6 +67,7 @@ def roll_frame(frame_counter, pin_num):
         pins_left = pins_left - current_frame_stat[1]
         current_frame_stat[ball_counter] = roll_ball(ball_counter, pins_left)
         pins_left = pin_num
+    # } end for 
 
 
     current_frame_stat [3] = current_frame_stat [1] + current_frame_stat [2]
@@ -57,17 +76,16 @@ def roll_frame(frame_counter, pin_num):
 
     # Return the return variable, if any
 
-#} Function roll_frame()
+#} end Function roll_frame()
 
 # Function roll_ball()
-# Description:
-#   just here as a stub: rename and rewrite for real programs
+# Description: This function plays the role of tossing the ball
 # Calls:
-#   none
+#   random.randint()
 # Parameters:
-#   none
+#   ball_counter, pins_left
 # Returns:
-#   none
+#   score
 
 def roll_ball(ball_counter, pins_left):
 
@@ -82,35 +100,38 @@ def roll_ball(ball_counter, pins_left):
         else:
             print("Ball 1: " , score)
             return score
-
-
+        # } end if-else
+    
     elif ball_counter == 2 and pins_left !=0:
         score = random.randint(0,pins_left)
         if score == pins_left:
             print("Ball 2: " , score , "**************SPARE!")
             return score
+        # } end if
 
         else:
             print("Ball 2: " , score , "..............open frame")
             return score       
+        # } end else
     else:
         score = pins_left
         return score
-
-    # print ( "roll_ball() was executed\n" )  # so I can test-run the template and not get an error
-
+    # } end it-elif-else
 
     # Return the return variable, if any
 
-#} Function roll_ball()
+# } end Function roll_ball()
 
 # Function print_the_game()
 # Description:
-#   just here as a stub: rename and rewrite for real programs
+#   This function prints out the summary of the game and user chooses if he or    she wants to save the summary in text file.
 # Calls:
-#   none
+#   String.lower()
+#   open()
+#   file.write()
+#   file.close()
 # Parameters:
-#   none
+#   user_answer_summary, game_stat, frame_num
 # Returns:
 #   none
 
@@ -119,7 +140,7 @@ def print_the_game(user_answer_summary, game_stat, frame_num):
     # Declare Local Variable types (NOT parameters)
     frame_counter = 0
     convert_string = str
-    # print ( "print_the_game" )  # so I can test-run the template and not get an error
+    
     print("Here is your game summary:")
     print("Frame", "    Ball 1", "    Ball 2", "    Frame Total", "    Total Score")
 
@@ -132,18 +153,22 @@ def print_the_game(user_answer_summary, game_stat, frame_num):
         if user_answer_summary[0].lower() == 'y':
             try:
                 game_summary = open("gameSummary.txt", "a")
+            # } end try
             except:
                 print("There was an error")
+            # } end except
             else:
                 if frame_counter == 0:
                     game_summary.write("\nHere is your game summary:")
                     game_summary.write("\nFrame     Ball 1     Ball 2     Frame Total     Total Score\n")
-                
+                # } end if
+            # } end else    
             game_summary.write(convert_string + "\n")
-            game_summary.close        
+            game_summary.close()        
+        # } end if
 
         frame_counter = frame_counter +1
-
+    # } end while
     # Return the return variable, if any
 
 #} Function print_the_game()
