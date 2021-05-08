@@ -1,69 +1,28 @@
-# Program Bowling Simulation
-# Description: This program is a bowling simulation. It takes user's input, calculates the total and displays the score.
-# # Library <library name> 
-# Functions Included in Library: 
-#   play_game()
-#   roll_frame()
-#   roll_ball()
-#   prin_the_game()
-# Author: Chang Yeon Hong
-# Date: May 6, 2021
-# Revised: 
-#   <revision date> 
-
-# list libraries used
 import random
 
-# Declare global constants (name in ALL_CAPS)
-
-NUMBER_OF_FRAMES = int(10)
-NUMBER_OF_PINS = int(10)
-
-
-def main():
-
-    print("""Hello, welcome to ACC Lanes.
-Here are your shoes.  Pick any ball from the racks.""")
-
-    # Declare Variable types (EVERY variable used in this main program)
-    user_answer_game = input("Do you want to play the game?  ")
-    user_answer_summary = str
-    # Ask the user if they want to play game (repetition)
-    while user_answer_game[0].lower() == "y":
-        user_answer_summary = input("Do you want a summary?  ")
-        play_game(user_answer_summary)
-
-        user_answer_game = input("Do you want to play another game?  ")
-    else: print ("""Exiting the game.
-    Thanks for playing!""")
-
-# Function play_game()
-# Description: This function actually plays one game
-#   
-# Calls: roll_frames(), print_the_game() 
-# Parameters: user_answer_summary
-# Returns: none
-    
-def play_game(user_answer_summary):
+def play_game(frame_num, pin_num ,user_answer_summary):
 
     # Declare Local Variable types (NOT parameters)
     
     frames_list = []
     game_stat = []
-    for frame_counter in range(NUMBER_OF_FRAMES):
+    for frame_counter in range(frame_num):
         
         print("Frame ", frame_counter +1)
         
-        frames_list = roll_frame(frame_counter)
+        frames_list = roll_frame(frame_counter, pin_num)
         
         game_stat.append(frames_list)
 
         if frame_counter == 0:
             game_stat[frame_counter][4] = game_stat[frame_counter][3]
+        #} end if
         if frame_counter != 0:
             game_stat[frame_counter][4] = game_stat[frame_counter][3] + game_stat[frame_counter-1][4]
-    
-    print_the_game(user_answer_summary,game_stat)
+        #} end if
+    # } end for
+
+    print_the_game(user_answer_summary,game_stat, frame_num)
 
     # Return the return variable, if any
 
@@ -71,25 +30,25 @@ def play_game(user_answer_summary):
 
 # Function roll_frame()
 # Description:
-#   just here as a stub: rename and rewrite for real programs
+#   
 # Calls:
 #   none
 # Parameters:
-#   none
+#   frame_counter
 # Returns:
-#   none
+#   current_frame stat
 
-def roll_frame(frame_counter):
+def roll_frame(frame_counter, pin_num):
 
     # Declare Local Variable types (NOT parameters)
     
     current_frame_stat = [frame_counter,0,0,0,0]
-    pins_left = NUMBER_OF_PINS
+    pins_left = pin_num
     
     for ball_counter in range (1,3):
         pins_left = pins_left - current_frame_stat[1]
         current_frame_stat[ball_counter] = roll_ball(ball_counter, pins_left)
-        pins_left = NUMBER_OF_PINS
+        pins_left = pin_num
 
 
     current_frame_stat [3] = current_frame_stat [1] + current_frame_stat [2]
@@ -155,7 +114,7 @@ def roll_ball(ball_counter, pins_left):
 # Returns:
 #   none
 
-def print_the_game(user_answer_summary, game_stat):
+def print_the_game(user_answer_summary, game_stat, frame_num):
 
     # Declare Local Variable types (NOT parameters)
     frame_counter = 0
@@ -165,21 +124,21 @@ def print_the_game(user_answer_summary, game_stat):
     print("Frame", "    Ball 1", "    Ball 2", "    Frame Total", "    Total Score")
 
     
-    
-
-    # for frame_counter in range (NUMBER_OF_FRAMES):
-
-    while frame_counter < NUMBER_OF_FRAMES:
+    while frame_counter < frame_num:
         convert_string = '{a:>5} {b:>10} {c:>10} {d:>15} {e:>15}'.format(a = frame_counter+1, b= game_stat[frame_counter][1], c= game_stat[frame_counter][2], d=game_stat[frame_counter][3], e=game_stat[frame_counter][4])
 
         print(convert_string)
 
         if user_answer_summary[0].lower() == 'y':
-            
-            game_summary = open("gameSummary.txt", "a")
-            if frame_counter == 0:
-                game_summary.write("\nHere is your game summary:")
-                game_summary.write("\nFrame     Ball 1     Ball 2     Frame Total     Total Score\n")
+            try:
+                game_summary = open("gameSummary.txt", "a")
+            except:
+                print("There was an error")
+            else:
+                if frame_counter == 0:
+                    game_summary.write("\nHere is your game summary:")
+                    game_summary.write("\nFrame     Ball 1     Ball 2     Frame Total     Total Score\n")
+                
             game_summary.write(convert_string + "\n")
             game_summary.close        
 
@@ -188,8 +147,3 @@ def print_the_game(user_answer_summary, game_stat):
     # Return the return variable, if any
 
 #} Function print_the_game()
-
-
-# End Program
-
-main()
