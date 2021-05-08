@@ -108,7 +108,7 @@ def evaluate_user_guess(user_guess)
                 feedback = "equal"
             # } end elif
             elif: user_guess > answer:
-                feedback = "higher"
+                feedback = "high"
                 # } end elif
         # } end else
     #} end else

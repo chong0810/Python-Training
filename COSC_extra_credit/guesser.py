@@ -33,10 +33,22 @@ import thinker, random
 def play_a_round(lower_limit, upper_limit)
 
     # Declare Local Variable types (NOT parameters)
-    tries = int()
+    tries = int(0)
+    guess = int()
+    think = str("higher")
 
-    thinker.evaluate_user_guess()
-    make_a_guess()
+    while think == "high" or think == "low":
+        tries = tries + 1 
+        guess = make_a_guess(lower_limit, upper_limit)
+        think = thinker.evaluate_user_guess(guess)
+        if think == "high" or think == "low":
+            print("The number you guessed is ", think, "er than the answer.")
+        # } end if
+    # } end while
+
+    if think == "error":
+        tries = -1
+    # } end if
 
 
     # Return the return variable, if any
@@ -64,8 +76,17 @@ def play_a_round(lower_limit, upper_limit)
 def make_a_guess(low, high)
 
     # Declare Local Variable types (NOT parameters)
-    my_guess = int()
-    my_guess = random.randint(low,high)
+    print("Guess a number between ", low, " and ", high)
+    try:
+        my_guess = int(input("I'm guessing "))
+        
+        while my_guess < low or my_guess > high:
+            print("Please guess a number between ", low, " and ", high)
+            my_guess = int(input("I'm guessing "))
+    except:
+        my_guess = -1
+   
+
     # Return the return variable, if any
     return my_guess
 # End Function make_a_guess()
