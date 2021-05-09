@@ -9,7 +9,7 @@
 #   <revision date> 
 
 # list libraries used
-import thinker, random
+import thinker
 
 # Declare global constants (name in ALL_CAPS)
 
@@ -30,20 +30,23 @@ import thinker, random
 # Returns:
 #   tries           int()
 
-def play_a_round(lower_limit, upper_limit)
+def play_a_round(lower_limit, upper_limit):
 
     # Declare Local Variable types (NOT parameters)
     tries = int(0)
     guess = int()
-    think = str("higher")
+    think = str("high")
 
     while think == "high" or think == "low":
         tries = tries + 1 
         guess = make_a_guess(lower_limit, upper_limit)
         think = thinker.evaluate_user_guess(guess)
-        if think == "high" or think == "low":
-            print("The number you guessed is ", think, "er than the answer.")
+        if think == "high":
+            print("The number you guessed is higher than the answer.")
         # } end if
+        elif think == "low":
+            print("The number you guessed is lower than the answer.")
+        # } end elif
     # } end while
 
     if think == "error":
@@ -73,7 +76,7 @@ def play_a_round(lower_limit, upper_limit)
 # Returns:
 #   my_guess    int()
 
-def make_a_guess(low, high)
+def make_a_guess(low, high):
 
     # Declare Local Variable types (NOT parameters)
     print("Guess a number between ", low, " and ", high)

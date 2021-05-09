@@ -35,19 +35,19 @@ import random
 # Returns:
 #   upper_limit     int()
 
-def think_of_a_number(low_limit, high_limit)
+def think_of_a_number (low_limit, high_limit):
 
     # Declare Local Variable types (NOT parameters)
     upper_limit = int()
     answer = int ()
 
-    upper_limit = random(low_limit, high_limit)
+    upper_limit = random.randint(low_limit, high_limit)
     print(upper_limit)
 
     print("I'm thinking of a number between ", low_limit, " and " , upper_limit)
 
     answer = random.randint(low_limit, upper_limit)
-    print(answer)
+    answer = str(answer)
 
     try:
         file1 = open("answer.txt", "w")
@@ -82,32 +82,34 @@ def think_of_a_number(low_limit, high_limit)
 # Returns:
 #   feedback    str()
 
-def evaluate_user_guess(user_guess)
+def evaluate_user_guess(user_guess):
 
     # Declare Local Variable types (NOT parameters)
     answer = int()
     feedback = str()
+
+    
 
     if user_guess == -1:
             feedback = "error"
     # } end if
     else:
         try:
-        file1 = open("answer.txt", "r")
+            file1 = open("answer.txt", "r")
         # } end try
         except:
             feedback = "error"
         # } end except
         else: 
-            answer = file1.read()
+            answer = int(file1.read())
             file1.close()
             if user_guess < answer:
                 feedback = "low"
             # } end if
-            elif: user_guess == answer:
+            elif user_guess == answer:
                 feedback = "equal"
             # } end elif
-            elif: user_guess > answer:
+            elif user_guess > answer:
                 feedback = "high"
                 # } end elif
         # } end else
