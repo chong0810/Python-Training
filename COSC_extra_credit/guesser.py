@@ -79,7 +79,6 @@ def play_a_round(lower_limit, upper_limit):
 def make_a_guess(low, high):
 
     # Declare Local Variable types (NOT parameters)
-    print("Guess a number between ", low, " and ", high)
     try:
         my_guess = int(input("I'm guessing "))
         

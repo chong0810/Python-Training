@@ -40,9 +40,7 @@ def think_of_a_number (low_limit, high_limit):
     # Declare Local Variable types (NOT parameters)
     upper_limit = int()
     answer = int ()
-
     upper_limit = random.randint(low_limit, high_limit)
-    print(upper_limit)
 
     print("I'm thinking of a number between ", low_limit, " and " , upper_limit)
 
