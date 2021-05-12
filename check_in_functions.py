@@ -1,4 +1,4 @@
-# Program: Basic Login Functions
+# Program: Check-In Functions
 # Description: This is a list of functions that will be used for checking in the patient.
 # Author: Chang Yeon Hong
 # Date: 12 May 2021
@@ -15,7 +15,7 @@
 # Parameters:
 #   userID
 # Returns:
-#   none
+#   foundIt
 
 def checkUserAccount (userID):
     
@@ -26,49 +26,60 @@ def checkUserAccount (userID):
     patientList = []
     counter1 = 0
     counter2 = 0
+    try:
+        file1 = open("database.txt", "r")
+    # } end try
+    except:
+        createUserAccount()
+    # } end except
+    else:
+        checker = file1.read()
+        patientList = checker.split("/")
+        patientList.pop()
+    
 
-    file1 = open("database.txt", "r")
+        for counter1 in range (len(patientList)):
+            cutter = str()
+            newList = []
 
-    checker = file1.read()
-    patientList = checker.split("/")
-    patientList.pop()
+            cutter = patientList[counter1]
+            cutter = cutter.replace("[","")
+        
+            cutter = cutter.replace("]","")
+        
+            cutter = cutter.replace("'","")
+        
 
-    for counter1 in range (len(patientList)):
-        cutter = str()
-        newList = []
+            newList = cutter.split(",")
+        
+            patientList[counter1] = newList
+        # } end for
+        
+        for counter2 in range (len(patientList)):
+        
+            if patientList[counter2][0] == userID:
+                print("First Name: " + patientList[counter2][1])
+                print("Last Name: " + patientList[counter2][2])
+                print("Birth Date: " + patientList[counter2][3])
+                print("Username: " + patientList[counter2][0])
+                foundIt = True
+            # } end 
+        # } end for
+        if foundIt == False:
+            print("Couldn't find your username in the database")
+            print("Would you like to create an account?")
+            createAccountChoice = str(input("Enter 1 = Yes / 2 = No : "))
 
-        cutter = patientList[counter1]
-        cutter = cutter.replace("[","")
-        
-        cutter = cutter.replace("]","")
-        
-        cutter = cutter.replace("'","")
-        
-        
-        newList = cutter.split(",")
-        
-        patientList[counter1] = newList
-        
-    for counter2 in range (len(patientList)):
-        
-        if patientList[counter2][0] == userID:
-            print("First Name: " + patientList[counter2][1])
-            print("Last Name: " + patientList[counter2][2])
-            print("Birth Date: " + patientList[counter2][3])
-            print("Username: " + patientList[counter2][0])
-            foundIt = True
-    if foundIt == False:
-        print("Couldn't find your username in the database")
-        print("Would you like to create an account?")
-        createAccountChoice = str(input("Enter 1 = Yes / 2 = No"))
-
-        while createAccountChoice != "1" and createAccountChoice != "2":
-            createAccountChoice = str(input("Please, enter the correct number: "))
-        if createAccountChoice == "1":
-            createUserAccount()
+            while createAccountChoice != "1" and createAccountChoice != "2":
+                createAccountChoice = str(input("Please, enter the correct number: "))
+            # } end while
+            if createAccountChoice == "1":
+                createUserAccount()
+            # } end if
+        # } end if
 
     # Return the return variable, if any
-
+    return foundIt
 #} end Function createUserAccount()
 
 # Function createUserAccount()
@@ -119,7 +130,7 @@ def createUserAccount ():
 
     
 
-    print ( "createUserAccount" )  # so I can test-run the template and not get an error
+    print ("User Account Successfully Created")  # so I can test-run the template and not get an error
 
 
     # Return the return variable, if any
