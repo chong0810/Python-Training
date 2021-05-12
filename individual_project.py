@@ -15,6 +15,11 @@ def main():
     # Declare Variable types (EVERY variable used in this main program)
 
     userInput = str()
+    userName = str()
+    first_name = str()
+    last_name = str()
+    birth_date = int()
+    userInput = str()
     checker = True
     
     
@@ -41,6 +46,16 @@ def main():
 
     elif userInput == "2":
         
+        first_name = input("What is your First Name: ")
+        last_name = input("What is your Last Name: " )
+        birth_date = (input("When is your Birthday in MMDDYYYY format: "))
+        userID = (first_name[0]+last_name+str(birth_date)).lower()
+
+        individual_project_functions.checkUserAccount(userID)
+    else:
+        print("Exiting Program")
+
+
 
 
 

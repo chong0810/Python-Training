@@ -6,23 +6,31 @@
 #   <revision date> 
 
 # list libraries used
-import random
 # Declare global constants (name in ALL_CAPS)
 
 # Function checkUserAccount()
 # Description: This will check if the user already has an account
 # Calls:
-#   none
+#   createUserAccount()
 # Parameters:
-#   none
+#   userID
 # Returns:
 #   none
 
 def checkUserAccount (userID):
-
+    
     # Declare Local Variable types (NOT parameters)
+    checker = str()
+    patientList = []
+    file1 = open("database.txt", "r")
+
+    checker = file1.read()
+    patientList = checker.split("/")
+
+    print(patientList)
 
 
+    
 
     print ( "checkUserAccount" )  # so I can test-run the template and not get an error
 
@@ -85,4 +93,19 @@ def createUserAccount ():
     # Return the return variable, if any
 
 #} end Function createUserAccount()
+
+# def findMyAccount ():
+#     checker = str()
+#     file1 = open("database.txt","r")
+#     checker = file1.read()
+#     print(checker)
+
+    
+#     # Declare Local Variable types (NOT parameters)
+#     print("Find my Account")  # so I can test-run the template and not get an error
+
+
+#     # Return the return variable, if any
+
+# #} end Function findMyAccount()
 
