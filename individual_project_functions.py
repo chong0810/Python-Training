@@ -20,20 +20,52 @@
 def checkUserAccount (userID):
     
     # Declare Local Variable types (NOT parameters)
+    foundIt = False
+    createAccountChoice = str()
     checker = str()
     patientList = []
+    counter1 = 0
+    counter2 = 0
+
     file1 = open("database.txt", "r")
 
     checker = file1.read()
     patientList = checker.split("/")
+    patientList.pop()
 
-    print(patientList)
+    for counter1 in range (len(patientList)):
+        cutter = str()
+        newList = []
 
+        cutter = patientList[counter1]
+        cutter = cutter.replace("[","")
+        
+        cutter = cutter.replace("]","")
+        
+        cutter = cutter.replace("'","")
+        
+        
+        newList = cutter.split(",")
+        
+        patientList[counter1] = newList
+        
+    for counter2 in range (len(patientList)):
+        
+        if patientList[counter2][0] == userID:
+            print("First Name: " + patientList[counter2][1])
+            print("Last Name: " + patientList[counter2][2])
+            print("Birth Date: " + patientList[counter2][3])
+            print("Username: " + patientList[counter2][0])
+            foundIt = True
+    if foundIt == False:
+        print("Couldn't find your username in the database")
+        print("Would you like to create an account?")
+        createAccountChoice = str(input("Enter 1 = Yes / 2 = No"))
 
-    
-
-    print ( "checkUserAccount" )  # so I can test-run the template and not get an error
-
+        while createAccountChoice != "1" and createAccountChoice != "2":
+            createAccountChoice = str(input("Please, enter the correct number: "))
+        if createAccountChoice == "1":
+            createUserAccount()
 
     # Return the return variable, if any
 
