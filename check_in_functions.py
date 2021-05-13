@@ -68,7 +68,7 @@ def checkUserAccount (userID):
                 print("State: " + patientList[counter2][7])
                 print("Zipcode: " + patientList[counter2][8])
                 print("Phone Number: " + patientList[counter2][9])
-                print("Email Address: " + patientList[counter2][10])
+                print("Email Address: " + patientList[counter2][10] + "\n")
                 
                 foundIt = True
             # } end 
@@ -138,20 +138,19 @@ def createUserAccount ():
     phoneNumber = input("Phone Number in ###-###-#### format: ")
     emailAddress = input("Your Email Address: ")
 
-    print(duplicateChecker)
-
     if userID in duplicateChecker:
-        print("You already have an account!")
+        print("You already have an account!\n")
     else:
-        newAccount = [userID, first_name, last_name, birth_date, address1,address2, city,state,zipcode,phoneNumber,emailAddress]
+        newAccount = [userID, first_name, last_name, birth_date, address1,address2, city,state,str(zipcode),str(phoneNumber),emailAddress.lower()]
         file1 = open("database.txt","a")
         file1.write(str(newAccount)+"/")
         file1.close()
-
+        print("Your username is: " + userID)
+        print ("User Account Successfully Created \n")
 
     
 
-    print ("User Account Successfully Created")  # so I can test-run the template and not get an error
+      # so I can test-run the template and not get an error
 
 
     # Return the return variable, if any
