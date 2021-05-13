@@ -13,7 +13,7 @@
 # Calls:
 #   createUserAccount()
 # Parameters:
-#   userID
+#   userID, searchType
 # Returns:
 #   foundIt
 
