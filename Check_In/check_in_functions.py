@@ -17,7 +17,7 @@
 # Returns:
 #   foundIt
 
-def checkUserAccount (userID):
+def checkUserAccount (userID, searchType):
     
     # Declare Local Variable types (NOT parameters)
     foundIt = False
@@ -56,23 +56,29 @@ def checkUserAccount (userID):
         # } end for
         
         for counter2 in range (len(patientList)):
-        
-            if patientList[counter2][0] == userID:
-                print("First Name: " + patientList[counter2][1])
-                print("Last Name: " + patientList[counter2][2])
-                print("Birth Date: " + patientList[counter2][3])
-                print("Username: " + patientList[counter2][0])
-                print("Address1: " + patientList[counter2][4])
-                print("Address2: " + patientList[counter2][5])
-                print("City: " + patientList[counter2][6])
-                print("State: " + patientList[counter2][7])
-                print("Zipcode: " + patientList[counter2][8])
-                print("Phone Number: " + patientList[counter2][9])
-                print("Email Address: " + patientList[counter2][10] + "\n")
+            if searchType == 1:
+                if patientList[counter2][0] == userID:
+                    print(patientList[counter2][1] + patientList[counter2][2] + ", thanks for visiting us today.\n")
+                    foundIt = True
+                # } if end
+            # } if end
+            else:
+                if patientList[counter2][0] == userID:
+                    print("First Name: " + patientList[counter2][1])
+                    print("Last Name: " + patientList[counter2][2])
+                    print("Birth Date: " + patientList[counter2][3])
+                    print("Username: " + patientList[counter2][0])
+                    print("Address1: " + patientList[counter2][4])
+                    print("Address2: " + patientList[counter2][5])
+                    print("City: " + patientList[counter2][6])
+                    print("State: " + patientList[counter2][7])
+                    print("Zipcode: " + patientList[counter2][8])
+                    print("Phone Number: " + patientList[counter2][9])
+                    print("Email Address: " + patientList[counter2][10] + "\n")
+                    foundIt = True
                 
-                foundIt = True
-            # } end 
-        # } end for
+                # } end 
+            # } end for
         if foundIt == False:
             print("Couldn't find your username in the database")
             print("Would you like to create an account?")

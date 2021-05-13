@@ -37,9 +37,9 @@ def main():
 
         if userInput == "1":
             userName = input("Enter your user name: ")
-            checker = check_in_functions.checkUserAccount(userName)
+            checker = check_in_functions.checkUserAccount(userName, 1)
             if checker == True:
-                print("Thanks for checking in! \n")
+                print("You are checked in for your appointment! \n")
             # } end if
             else:
                 print("Exiting program")
@@ -53,7 +53,7 @@ def main():
             birth_date = (input("When is your Birthday in MMDDYYYY format: "))
             userID = (first_name[0]+last_name+str(birth_date)).lower()
 
-            check_in_functions.checkUserAccount(userID)
+            check_in_functions.checkUserAccount(userID, 2)
         # } end elif
 
         elif userInput == "3":
