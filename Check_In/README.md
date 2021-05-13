@@ -1,5 +1,5 @@
 
-# Check-In Program
+# Check-In
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/chong0810/Python-Training/tree/main/Check_In)
 
 # Description
