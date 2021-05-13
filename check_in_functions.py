@@ -62,6 +62,14 @@ def checkUserAccount (userID):
                 print("Last Name: " + patientList[counter2][2])
                 print("Birth Date: " + patientList[counter2][3])
                 print("Username: " + patientList[counter2][0])
+                print("Address1: " + patientList[counter2][4])
+                print("Address2: " + patientList[counter2][5])
+                print("City: " + patientList[counter2][6])
+                print("State: " + patientList[counter2][7])
+                print("Zipcode: " + patientList[counter2][8])
+                print("Phone Number: " + patientList[counter2][9])
+                print("Email Address: " + patientList[counter2][10])
+                
                 foundIt = True
             # } end 
         # } end for
@@ -98,6 +106,13 @@ def createUserAccount ():
     last_name = str()
     birth_date = int()
     userID = str()
+    address1 = str()
+    address2 = str()
+    city = str()
+    state = str()
+    zipcode = str()
+    phoneNumber = str()
+    emailAddress = str()
     duplicateChecker = str()
     file1 = str()
     newAccount = []
@@ -115,14 +130,20 @@ def createUserAccount ():
     last_name = input("What is your Last Name: " )
     birth_date = (input("When is your Birthday in MMDDYYYY format: "))
     userID = (first_name[0]+last_name+str(birth_date)).lower()
+    address1 = input("What is your street address: ")
+    address2 = input("APT/Suite/Building#: ")
+    city = input("Which City: ")
+    state = input("Which State: ")
+    zipcode = input("Postal code: ")
+    phoneNumber = input("Phone Number in ###-###-#### format: ")
+    emailAddress = input("Your Email Address: ")
 
     print(duplicateChecker)
 
     if userID in duplicateChecker:
         print("You already have an account!")
     else:
-        newAccount = [userID, first_name, last_name, birth_date]
-        print(newAccount)
+        newAccount = [userID, first_name, last_name, birth_date, address1,address2, city,state,zipcode,phoneNumber,emailAddress]
         file1 = open("database.txt","a")
         file1.write(str(newAccount)+"/")
         file1.close()
@@ -136,19 +157,4 @@ def createUserAccount ():
     # Return the return variable, if any
 
 #} end Function createUserAccount()
-
-# def findMyAccount ():
-#     checker = str()
-#     file1 = open("database.txt","r")
-#     checker = file1.read()
-#     print(checker)
-
-    
-#     # Declare Local Variable types (NOT parameters)
-#     print("Find my Account")  # so I can test-run the template and not get an error
-
-
-#     # Return the return variable, if any
-
-# #} end Function findMyAccount()
 
