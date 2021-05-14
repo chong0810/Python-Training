@@ -20,11 +20,40 @@
 # Returns:
 #   none
 
-def checkPalindrome(palindrome):
+def checkPalindrome(palindromeChecker):
 
     # Declare Local Variable types (NOT parameters)
+    palindromeWord = palindromeChecker.lower()
+    palindromeBackward = str()
 
-    print ("Palindrome Functions" )  # so I can test-run the template and not get an error
+    palindromeWord = palindromeWord.replace(" ", "")
+    print(palindromeWord)
+    palindromeWord = palindromeWord.replace(",","")
+    print(palindromeWord)
+    palindromeWord = palindromeWord.replace(".","")
+    print(palindromeWord)
+    palindromeWord = palindromeWord.replace(";","")
+    print(palindromeWord)
+    palindromeWord = palindromeWord.replace(":","")
+    print(palindromeWord)
+    palindromeWord = palindromeWord.replace("'","")
+    print(palindromeWord)
+    palindromeWord = palindromeWord.replace('"',"")
+    print(palindromeWord)
+    palindromeWord = palindromeWord.replace("?","")
+    print(palindromeWord)
+    palindromeWord = palindromeWord.replace("!","")
+    print(palindromeWord)
+
+    palindromeBackward = palindromeWord[::-1]
+    print(palindromeBackward)
+
+    if palindromeWord == palindromeBackward:
+        print("It is a palindrome.")
+    else:
+        print("It is not a palindrome.")
+    
+    # so I can test-run the template and not get an error
 
 
     # Return the return variable, if any
