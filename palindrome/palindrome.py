@@ -12,8 +12,7 @@ import palindrome_functions
 def main():
 
 # Declare Variable types (EVERY variable used in this main program)
-    palindromeChecker = str(input("Put in the word or sentence to check if it is palindrome: "))
-    palindrome_functions.checkPalindrome(palindromeChecker)
+    palindrome_functions.checkPalindrome()
         
 
 # End Program

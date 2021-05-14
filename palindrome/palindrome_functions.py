@@ -1,8 +1,7 @@
 # Program: Palindrome_functions 
-# Description: 
-#   template with a stub function
-# Author: <your name> 
-# Date: <today’s date>
+# Description: This is Palindrome_functions module that it will check if the word or sentence is palindrome or not.
+# Author: Chang Yeon Hong
+# Date: 13 May 2021
 # Revised: 
 #   <revision date> 
 
@@ -10,9 +9,8 @@
 
 # Declare global constants (name in ALL_CAPS)
 
-# Function stub()
-# Description:
-#   just here as a stub: rename and rewrite for real programs
+# Function checkPalindrome()
+# Description: This function will check if the word or sentence is a palindrome or not
 # Calls:
 #   none
 # Parameters:
@@ -20,43 +18,53 @@
 # Returns:
 #   none
 
-def checkPalindrome(palindromeChecker):
+def checkPalindrome():
 
     # Declare Local Variable types (NOT parameters)
-    palindromeWord = palindromeChecker.lower()
-    palindromeBackward = str()
-
-    palindromeWord = palindromeWord.replace(" ", "")
-    print(palindromeWord)
-    palindromeWord = palindromeWord.replace(",","")
-    print(palindromeWord)
-    palindromeWord = palindromeWord.replace(".","")
-    print(palindromeWord)
-    palindromeWord = palindromeWord.replace(";","")
-    print(palindromeWord)
-    palindromeWord = palindromeWord.replace(":","")
-    print(palindromeWord)
-    palindromeWord = palindromeWord.replace("'","")
-    print(palindromeWord)
-    palindromeWord = palindromeWord.replace('"',"")
-    print(palindromeWord)
-    palindromeWord = palindromeWord.replace("?","")
-    print(palindromeWord)
-    palindromeWord = palindromeWord.replace("!","")
-    print(palindromeWord)
-
-    palindromeBackward = palindromeWord[::-1]
-    print(palindromeBackward)
-
-    if palindromeWord == palindromeBackward:
-        print("It is a palindrome.")
+    infile = str()
+    #read string_file.txt
+    try:
+        infile = open("string_file.txt", 'r')
+    except:
+        print("There was an error reading string_file.txt")
     else:
-        print("It is not a palindrome.")
+        stringList = infile.readlines()
+        infile.close()
+
+        for line in stringList:
+            palindromeWord = line.lower()
+            whatSentence = palindromeWord
+            whatSentence = whatSentence.replace("\n", "")
+            palindromeBackward = str()
+
+        #these lines will eliminate special characters
+            palindromeWord = palindromeWord.replace("-", "")
+            palindromeWord = palindromeWord.replace(" ", "")
+            palindromeWord = palindromeWord.replace(",","")
+            palindromeWord = palindromeWord.replace(".","")
+            palindromeWord = palindromeWord.replace(";","")
+            palindromeWord = palindromeWord.replace(":","")
+            palindromeWord = palindromeWord.replace("'","")
+            palindromeWord = palindromeWord.replace('"',"")
+            palindromeWord = palindromeWord.replace("?","")
+            palindromeWord = palindromeWord.replace("!","")
+            palindromeWord = palindromeWord.replace("\n","")
+        
+            #this line will flip the word or sentence
+            palindromeBackward = palindromeWord[::-1]
+        
+            #this will determine if the word or sentence is palindrome
+            if palindromeWord == palindromeBackward:
+                print(whatSentence + " \n" + "It is a palindrome.\n")
+            # } end if
+            else:
+                print(whatSentence + " \n" + "It is not a palindrome.\n")
+            # } end else
+        # } end for
     
-    # so I can test-run the template and not get an error
 
 
     # Return the return variable, if any
 
-#} Function stub()
+#} Function checkPalindrome()
 
